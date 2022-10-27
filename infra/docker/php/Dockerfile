@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-bullseye AS base
+FROM php:8.0-fpm-bullseye AS base
 
 WORKDIR /workspace
 
@@ -30,6 +30,7 @@ RUN apt-get update \
     intl \
     pdo_mysql \
     zip \
+    gd \
     bcmath \
   && composer config -g process-timeout 3600 \
   && composer config -g repos.packagist composer https://packagist.org
